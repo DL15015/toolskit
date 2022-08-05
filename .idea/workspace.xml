@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb79c07d-71f5-469c-a8d4-65fae9aafa64" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract-toolkit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/contract-toolkit.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book.py" beforeDir="false" afterPath="$PROJECT_DIR$/book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract/boost.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/boost.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract/gauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/gauge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract/swap_mining.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/swap_mining.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,7 @@
       <recent name="$PROJECT_DIR$/tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.boost">
+  <component name="RunManager" selected="Python.gauge">
     <configuration name="3pool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="contract-toolkit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -169,8 +171,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.boost" />
         <item itemvalue="Python.gauge" />
+        <item itemvalue="Python.boost" />
         <item itemvalue="Python.swap_mining" />
         <item itemvalue="Python.swap_router" />
         <item itemvalue="Python.3pool" />
@@ -205,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659672187493</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changes">
+      <created>1659686834432</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1659686834433</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
