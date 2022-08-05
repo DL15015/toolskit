@@ -10,9 +10,6 @@ print("池子数量:", pool_length)
 # pool_info 池子信息
 pool_info = boost.functions.poolInfo(3).call()
 
-
-
-
 # print("池子lp地址：", pool_info[0])
 print("池子初始权重：", pool_info[1])
 
