@@ -3,11 +3,11 @@ from app import *
 ken3, swap_router, swap_mining, boost, gauge = init()
 print(swap_mining.address)
 
-# pool_length 池子数量
-pool_length = swap_mining.functions.poolLength().call()
-print("池子数量:", pool_length)
-
-# pool_info 池子信息
+# poolLength 池子数量
+poolLength = swap_mining.functions.poolLength().call()
+print("池子数量:", poolLength)
+print("")
+# pool_info 池子信息 参数0：uint256 输入池子id
 # 0xB92524021c43f663F78dbD56Ed5007E110F94998:3pool:[0]
 # 0x7a99a241e8890922D8019238b4FE44B820fda9FE:5pool:[1]Zap
 # 0xb8E0680dCdaC232e8890d8b645C06cC90F97Cd73:4ppool:[2]Zap
@@ -16,19 +16,40 @@ print("池子数量:", pool_length)
 # 0xd1efA0F5BaCCfdcBe7c348AF3646D9B7F063702b::[5]
 # 0xEedA03461D0Bd045E2251ec2eE382568d6B0707f::[6]
 
-pool_info = swap_mining.functions.poolInfo(6).call()
-print("池子lp/Zap地址：", pool_info[0])
-print("池子初始权重：", pool_info[1])
-print("上次池子更新的块：", pool_info[2])
+poolInfo = swap_mining.functions.poolInfo(1).call()
+print("池子lp/Zap地址：", poolInfo[0])
+print("查询该池子的总交易量：", poolInfo[1])
+print("池子权重：", poolInfo[2])
+print("该池子累计的奖励：", poolInfo[3])
+print("上次池子更新的块：", poolInfo[4])
+print("")
 
-# total_weighte 所有池子权重
-total_weighte = swap_mining.functions.totalWeight().call()
-print('所有池子权重', total_weighte)
+# totalAllocPoint 所有池子权重
+totalAllocPoint = swap_mining.functions.totalAllocPoint().call()
+print("所有池子权重", totalAllocPoint)
 
-# votes 个人池子权重,输入池子token和池子lp地址
-votes = swap_mining.functions.votes(28, "0xB92524021c43f663F78dbD56Ed5007E110F94998").call()
-print("个人池子权重", votes)
+# userInfo 用户信息 参数0：uint256 输入池子id  参数1：address 输入一个钱包账户
+userInfo = swap_mining.functions.userInfo(0, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
+print("用户交易量：", userInfo[0])
+print("上次用户更新的块：", userInfo[1])
+print("")
 
-# weights 当前池子权重
-weights = swap_mining.functions.weights("0xB92524021c43f663F78dbD56Ed5007E110F94998").call()
-print("当前池子权重", weights)
+# votes：用户交易池子加速在池子的权重 参数0：uint256 输入一个tokenid 参数1: address 输入一个池子lp地址
+votes = swap_mining.functions.votes(38, "0x471831942aE446CfB1B6A4156e6660968c2f9924").call()
+print("用户交易池子加速在池子的权重", votes)
+
+# weights 当前池子投票后权重
+weights = swap_mining.functions.weights("0x471831942aE446CfB1B6A4156e6660968c2f9924").call()
+print("当前池子投票后权重", weights)
+
+# totalWeight 所有池子投票后权重
+totalWeight = swap_mining.functions.totalWeight().call()
+print('所有池子投票后权重', totalWeight)
+
+# rewardPoolInfo：查询用户预计收到的奖励数量 参数0：uint256 输入一个池子id 参数1：address 输入一个钱包账户
+rewardPoolInfo = swap_mining.functions.rewardPoolInfo(0, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
+print("查询用户预计收到的奖励数量", rewardPoolInfo)
+
+# usedWeights：用户在所有池子加速的总权重 参数: uint256 输入一个tokenid
+usedWeights = swap_mining.functions.usedWeights(38).call()
+print("查询用户在所有池子加速的总权重", usedWeights)

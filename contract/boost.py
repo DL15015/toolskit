@@ -15,7 +15,7 @@ print("")
 
 pool_info = boost.functions.poolInfo(3).call()
 print("池子lp地址：", pool_info[0])
-print("池子初始权重：", pool_info[1])
+print("池子权重：", pool_info[1])
 print("上次池子更新的块：", pool_info[2])
 print("")
 
@@ -39,7 +39,6 @@ print("")
 # 池子lp地址：
 # 工厂：crypto_factory：用加密地址在kcc链上的token方法获取；crvFactory：用非加密地址在kcc链上的token方法获取
 # 合约部署：在KCC测试网文档上找
-
 gauges = boost.functions.gauges("0x471831942aE446CfB1B6A4156e6660968c2f9924").call()
 print("池子的gauges地址", gauges)
 
