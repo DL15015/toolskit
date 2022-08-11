@@ -1,16 +1,16 @@
 from app import *
 
 ken3, swap_router, swap_mining, boost, gauge = init()
-print(gauge.address)
+print("池子的gauge地址", gauge.address)
 
-# amount 个人质押的lp,参数输入个人钱包地址
-amount = gauge.functions.userInfo("0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
-print("个人质押的lp:", amount[0] / 10 ** 18)
+# total_supply 所有人质押到该池子的lp的数量
+totalSupply = gauge.functions.totalSupply().call()
+print("所有人质押到该池子的lp的数量:", totalSupply / 10 ** 18)
 
-# total_supply 池子数量
-total_supply = gauge.functions.totalSupply().call()
-print("该池子总质押LP:", total_supply / 10 ** 18)
-
-# pengding 质押后待领取的奖励，传入个人钱包地址
+# pending：个人质押到池子里的预计的奖励 参数：address 输入一个钱包账户
 pending = gauge.functions.pending("0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
-print("质押后待领取的奖励:", pending / 10 ** 18)
+print("个人质押到池子里的预计的奖励:", pending / 10 ** 18)
+
+# userInfo：个人质押lp到此池子的数量 参数：address 输入一个钱包账户
+userInfo = gauge.functions.userInfo("0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
+print("个人质押lp到此池子的数量", userInfo[0] / 10 ** 18)

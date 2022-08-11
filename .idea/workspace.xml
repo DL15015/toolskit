@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb79c07d-71f5-469c-a8d4-65fae9aafa64" name="Changes" comment="Changes">
+    <list default="true" id="cb79c07d-71f5-469c-a8d4-65fae9aafa64" name="Changes" comment="swapMining data update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/book.py" beforeDir="false" afterPath="$PROJECT_DIR$/book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contract/boost.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/boost.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract/gauge.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/gauge.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contract/swap_mining.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/swap_mining.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +58,7 @@
       <recent name="$PROJECT_DIR$/tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.swap_mining">
+  <component name="RunManager" selected="Python.boost">
     <configuration name="3pool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="contract-toolkit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,9 +171,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.boost" />
         <item itemvalue="Python.swap_mining" />
         <item itemvalue="Python.gauge" />
-        <item itemvalue="Python.boost" />
         <item itemvalue="Python.swap_router" />
         <item itemvalue="Python.3pool" />
       </list>
@@ -220,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659696456945</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="swapMining data update">
+      <created>1660033602076</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1660033602076</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +247,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <MESSAGE value="swapMining data update" />
+    <option name="LAST_COMMIT_MESSAGE" value="swapMining data update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
