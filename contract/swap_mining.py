@@ -6,7 +6,7 @@ print(swap_mining.address)
 # poolLength 池子数量
 poolLength = swap_mining.functions.poolLength().call()
 print("池子数量:", poolLength)
-print("池子lp/Zap地址", "查询该池子的总交易量", "池子权重", "该池子累计的奖励", "上次池子更新的块")
+print("池子lp/Zap地址", "查询该池子的总交易量", "池子权重", "该池子累计的奖励", "上次池子更新的块", "日产出")
 for i in range(poolLength):
     # pool_info 池子信息 参数0：uint256 输入池子id
     # 0xB92524021c43f663F78dbD56Ed5007E110F94998:3pool:[0]
@@ -17,12 +17,18 @@ for i in range(poolLength):
     # 0xd1efA0F5BaCCfdcBe7c348AF3646D9B7F063702b::[5]
     # 0xEedA03461D0Bd045E2251ec2eE382568d6B0707f::[6]
     poolInfo = swap_mining.functions.poolInfo(i).call()
-    print("池子{}".format(i + 1), poolInfo)
-print("")
 
-# totalAllocPoint 所有池子权重
-totalAllocPoint = swap_mining.functions.totalAllocPoint().call()
-print("所有池子权重", totalAllocPoint)
+    # totalAllocPoint 所有池子权重
+    totalAllocPoint = swap_mining.functions.totalAllocPoint().call()
+    # print("所有池子权重", totalAllocPoint)
+
+    # Rewards output 该池子的日产出计算
+    # =交易挖矿的TRA块日产出总量 * 池权重系数
+    # =(TRA单块产量*28800 )*（该池子权重 / 所有池子权重 ）
+    rewardsOutput = (0.1 * 28800) * (poolInfo[2] / totalAllocPoint)
+
+    print("池子{}".format(i + 1), poolInfo, rewardsOutput)
+print("")
 
 # userInfo 用户信息 参数0：uint256 输入池子id  参数1：address 输入一个钱包账户
 userInfo = swap_mining.functions.userInfo(5, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
@@ -45,7 +51,7 @@ print("")
 
 # rewardPoolInfo：交易后，该账户在该池子即将获得奖励 参数0：uint256 输入一个池子id 参数1：address 输入一个钱包账户
 rewardPoolInfo = swap_mining.functions.rewardPoolInfo(0, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
-print("交易后，该账户在该池子即将获得奖励", rewardPoolInfo/ 10 ** 18)
+print("交易后，该账户在该池子即将获得奖励", rewardPoolInfo / 10 ** 18)
 
 # usedWeights：用户在所有池子加速的总权重 参数: uint256 输入一个tokenid
 usedWeights = swap_mining.functions.usedWeights(38).call()
