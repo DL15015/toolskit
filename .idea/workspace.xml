@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb79c07d-71f5-469c-a8d4-65fae9aafa64" name="Changes" comment="update gauge.py">
+    <list default="true" id="cb79c07d-71f5-469c-a8d4-65fae9aafa64" name="Changes" comment="update swap_mining.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contract/swap_mining.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/swap_mining.py" afterDir="false" />
     </list>
@@ -238,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660208880911</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update swap_mining.py">
+      <created>1660214845864</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660214845864</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +267,8 @@
     <MESSAGE value="swapMining data update" />
     <MESSAGE value="update data" />
     <MESSAGE value="update gauge.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gauge.py" />
+    <MESSAGE value="update swap_mining.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="update swap_mining.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
