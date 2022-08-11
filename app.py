@@ -1,7 +1,6 @@
 from web3 import Web3
 import json as json
 import book as book
-
 # rpc point
 rpc_url = "https://rpc-testnet.kcc.network"
 web3 = Web3(Web3.HTTPProvider(rpc_url))
@@ -36,7 +35,8 @@ def init():
         boost = web3.eth.contract(address=book.boost, abi=_abi["abi"])
     with open("../abi/gauge_abi.json") as f:
         _abi = json.load(f)
-        gauge = web3.eth.contract(address=book.gauge, abi=_abi["abi"])
+        gauges_addr = boost.functions.gauges(book.lp).call()
+        gauge = web3.eth.contract(address=gauges_addr, abi=_abi["abi"])
     return ken3, swap_router, swap_mining, boost, gauge
 
 

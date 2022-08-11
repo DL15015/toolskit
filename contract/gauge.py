@@ -1,6 +1,7 @@
 from app import *
 
-ken3, swap_router, swap_mining, boost, gauge = init()
+ret = init()
+gauge = ret[4]
 print("池子的gauge地址", gauge.address)
 
 # total_supply 所有人质押到该池子的lp的数量

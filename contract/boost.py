@@ -1,6 +1,6 @@
 from app import *
 
-ken3, swap_router, swap_mining, boost, gauge = init()
+ken3, swap_router, swap_mining, boost,gauge = init()
 print(boost.address)
 
 # # updateAll：刷新所有池子,无法调钱包
@@ -36,9 +36,4 @@ weights = boost.functions.weights("0xB92524021c43f663F78dbD56Ed5007E110F94998").
 print("当前池子权重", weights)
 print("")
 
-# gauges 获取gague地址，参数：传入池子lp地址（remix查询）。
-# 池子lp地址：
-# 工厂：crypto_factory：用加密地址在kcc链上的token方法获取；crvFactory：用非加密地址在kcc链上的token方法获取
-# 合约部署：在KCC测试网文档上找
-gauges1 = boost.functions.gauges("0xB92524021c43f663F78dbD56Ed5007E110F94998").call()
-print("池子的gauges地址", gauges1)
+
