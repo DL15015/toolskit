@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb79c07d-71f5-469c-a8d4-65fae9aafa64" name="Changes" comment="update locktime.py">
-      <change afterPath="$PROJECT_DIR$/contract/mainnet_book.py" afterDir="false" />
+    <list default="true" id="cb79c07d-71f5-469c-a8d4-65fae9aafa64" name="Changes" comment="update main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/book.py" beforeDir="false" afterPath="$PROJECT_DIR$/testnet_book.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contract/boost.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/boost.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/locktime.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/locker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract/swap_mining.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/swap_mining.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainnet_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainnet_book.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testnet_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/testnet_book.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,7 @@
       <recent name="$PROJECT_DIR$/contract" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/tools" />
     </key>
   </component>
@@ -171,9 +172,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.boost" />
-        <item itemvalue="Python.locker" />
         <item itemvalue="Python.swap_mining" />
         <item itemvalue="Python.gauge" />
+        <item itemvalue="Python.locker" />
         <item itemvalue="Python.address" />
       </list>
     </recent_temporary>
@@ -269,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660276193015</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update main">
+      <created>1660286992593</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1660286992593</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +301,8 @@
     <MESSAGE value="update gauge.py" />
     <MESSAGE value="update swap_mining.py" />
     <MESSAGE value="update locktime.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="update locktime.py" />
+    <MESSAGE value="update main" />
+    <option name="LAST_COMMIT_MESSAGE" value="update main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

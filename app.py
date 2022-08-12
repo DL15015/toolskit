@@ -36,7 +36,7 @@ def init():
         boost = web3.eth.contract(address=book.boost, abi=_abi["abi"])
     with open("../abi/gauge_abi.json") as f:
         _abi = json.load(f)
-        gauges_addr = boost.functions.gauges(book.lp).call()
+        gauges_addr = boost.functions.gauges(book.ken3_btc_eth_curveLPToken_address).call()
         gauge = web3.eth.contract(address=gauges_addr, abi=_abi["abi"])
     return ken3, swap_router, swap_mining, boost, gauge
 

@@ -21,7 +21,6 @@ for i in range(poolLength):
 
     # totalAllocPoint 所有池子权重
     totalAllocPoint = swap_mining.functions.totalAllocPoint().call()
-    # print("所有池子权重", totalAllocPoint)
 
     # Rewards output 该池子的日产出计算
     # =交易挖矿的TRA块日产出总量 * 池权重系数
@@ -30,6 +29,8 @@ for i in range(poolLength):
 
     print("池子{}".format(i + 1), poolInfo, rewardsOutput)
 print("")
+
+print("所有池子权重", totalAllocPoint)
 
 # userInfo 用户信息 参数0：uint256 输入池子id  参数1：address 输入一个钱包账户
 userInfo = swap_mining.functions.userInfo(5, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
