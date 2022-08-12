@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb79c07d-71f5-469c-a8d4-65fae9aafa64" name="Changes" comment="update lock">
-      <change afterPath="$PROJECT_DIR$/calc_klein/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/calc_klein/swap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contract/boost.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/boost.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calc_klein/swap.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc_klein/swap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/contract/swap_mining.py" beforeDir="false" afterPath="$PROJECT_DIR$/contract/swap_mining.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +57,7 @@
       <recent name="$PROJECT_DIR$/tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.swap_mining">
+  <component name="RunManager" selected="Python.swap">
     <configuration name="boost" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="contract-toolkit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,10 +168,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.swap_mining" />
         <item itemvalue="Python.swap" />
-        <item itemvalue="Python.locker" />
+        <item itemvalue="Python.swap_mining" />
         <item itemvalue="Python.boost" />
+        <item itemvalue="Python.locker" />
         <item itemvalue="Python.gauge" />
       </list>
     </recent_temporary>
@@ -297,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660294719763</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="update lock">
+      <created>1660301688883</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1660301688883</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

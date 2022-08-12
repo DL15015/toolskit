@@ -26,9 +26,11 @@ def get_poolinfo():
 
 
 # # totalAllocPoint 所有池子权重
-# totalAllocPoint = swap_mining.functions.totalAllocPoint().call()
-# print("所有池子权重", totalAllocPoint)
-#
+def get_totalAllocPoint():
+    totalAllocPoint = swap_mining.functions.totalAllocPoint().call()
+    return totalAllocPoint
+
+
 # # userInfo 用户信息 参数0：uint256 输入池子id  参数1：address 输入一个钱包账户
 # userInfo = swap_mining.functions.userInfo(5, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923").call()
 # print("用户交易量：", userInfo[0])
