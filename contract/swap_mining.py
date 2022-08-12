@@ -7,7 +7,7 @@ print(swap_mining.address)
 poolLength = swap_mining.functions.poolLength().call()
 print("池子数量:", poolLength)
 print("池子lp/Zap地址", "查询该池子的总交易量", "池子权重", "该池子累计的奖励", "上次池子更新的块",
-      "日产出")  # 日产出有3分钟延迟
+      "Daily Output")  # 日产出有3分钟延迟
 for i in range(poolLength):
     # pool_info 池子信息 参数0：uint256 输入池子id
     # 0xB92524021c43f663F78dbD56Ed5007E110F94998:3pool:[0]
