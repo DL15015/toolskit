@@ -2,8 +2,8 @@
 
 ken3 = "0xAa26524EF9637487c416599EAC16AD41fED0652a"
 Locker = "0x3fdAe129B7C34eE6Eec25EFE53d570ab06779213"  # （1个小时）
-swap_router = "0xD94e669Baf39488920108170EA16d9520D67D3cd"
-swap_Controller = "0xEf79a4643402D1dA219d3a1de1f66279cA7b8f9D"
+swap_router = ""
+swap_Controller = ""
 swap_mining = "0x1fE749E1BE727a231873aAF5B70D8497D04A0Dd2"
 boost = "0x762Ade7aDe8ffda40aD217dBA8B3D4b48f84aEa2"
 pool5 = ""
