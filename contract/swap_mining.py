@@ -28,6 +28,7 @@ for i in range(poolLength):
     rewardsOutput = (0.1 * 28800) * (poolInfo[2] / totalAllocPoint)
 
     print("池子{}".format(i + 1), poolInfo, rewardsOutput)
+
 print("")
 
 # userInfo 用户信息 参数0：uint256 输入池子id  参数1：address 输入一个钱包账户

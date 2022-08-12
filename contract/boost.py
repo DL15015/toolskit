@@ -36,4 +36,14 @@ weights = boost.functions.weights("0xB92524021c43f663F78dbD56Ed5007E110F94998").
 print("当前池子权重", weights)
 print("")
 
+# tokenPerBlock 每个块产生的奖励数量
+tokenPerBlock = boost.functions.tokenPerBlock().call()
+# print("每个块产生的奖励数量",tokenPerBlock)
+
+def get_pool_info():
+    return boost.functions.poolInfo(i).call()
+
+def get_tokenPerBlock():
+    return swap_mining.functions.tokenPerBlock().call()
+
 
