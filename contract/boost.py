@@ -30,3 +30,4 @@ print("查询加速之后个人池子权重", votes)
 # usedWeights：查询加速之后个人池子总权重 参数 address:输入池子lp地址
 weights = boost.functions.weights("0xB92524021c43f663F78dbD56Ed5007E110F94998").call()
 print("查询加速之后个人池子总权重", weights)
+
