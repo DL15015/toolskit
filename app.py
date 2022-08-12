@@ -1,9 +1,10 @@
 from web3 import Web3
 import json as json
-import book as book
+import mainnet_book as book
 # rpc point
 rpc_url = "https://rpc-testnet.kcc.network"
-web3 = Web3(Web3.HTTPProvider(rpc_url))
+main_url="https://rpc-mainnet.kcc.network"
+web3 = Web3(Web3.HTTPProvider(main_url))
 
 # test connector
 print("connected   ?", web3.isConnected())
