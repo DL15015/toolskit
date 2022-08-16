@@ -49,6 +49,7 @@ if __name__ == '__main__':
     poolInfo = get_pool_Info()
     print("")
     votes = get_votes(50,"0xB92524021c43f663F78dbD56Ed5007E110F94998")
+
     print("查询加速之后个人池子权重", votes)
     weights = get_weights("0xB92524021c43f663F78dbD56Ed5007E110F94998")
     print("查询加速之后个人池子总权重", weights)
