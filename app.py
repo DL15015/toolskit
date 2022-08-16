@@ -33,7 +33,7 @@ print("")
 def init():
     with open("../abi/3pool_abi.json") as f:
         _abi = json.load(f)
-        ken3 = web3.eth.contract(address=book.ken3, abi=_abi["abi"])
+        ken3 = web3.eth.contract(address=book.pool3lp, abi=_abi["abi"])
     with open("../abi/swap_router_abi.json") as f:
         _abi = json.load(f)
         swap_router = web3.eth.contract(address=book.swap_router, abi=_abi["abi"])

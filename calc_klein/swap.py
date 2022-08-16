@@ -1,4 +1,5 @@
 from contract.swap_mining import *
+from contract.pool3 import *
 
 poolInfo = get_poolinfo()
 totalAllocPoint = get_totalAllocPoint()
@@ -11,7 +12,7 @@ for num in poolInfo:
     # Rewards output 该池子的日产出计算
     # =交易挖矿的TRA块日产出总量 * 池权重系数
     # =(TRA单块产量*28800 )*（该池子权重 / 所有池子权重 ）
-    # print(num, rewardsOutput)
+    print(num, rewardsOutput)
 
 
 # 📚Minimum received
@@ -34,10 +35,21 @@ def get_price_impact(tokens_sold_num, tokens_sold_pri, tokens_bought_num, tokens
     return price_impact
 
 
-def get_trading_rewards():
+blockNumber = get_block_number()
+calc_token_amount = get_calc_token_amount(10, 0, 0)
+userInfo = get_userInfo(5, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923")
+rewardPoolInfo = get_rewardPoolInfo(0, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923")
+
+
+def get_trading_rewards(tokenamount1, tokenamount2, tokenamount3):
     # blockNumber 当前块
-    blockNumber = get_block_number()
-    difference_block = blockNumber - num[4]
+    diff_block = blockNumber - num[4]
+    cur_diff_reward = (0.1 * diff_block * 100) / totalAllocPoint
+    fut_poolinfo_trans_volume = poolinfo[0][1] + calc_token_amount
+    fut_userinfo_trans_volume = userInfo[0] + calc_token_amount
+    fut_pools_unclaimed_rewards = rewardPoolInfo + cur_diff_reward
+    fut_rewards = fut_pools_unclaimed_rewards * fut_userinfo_trans_volume / fut_poolinfo_trans_volume
+    now_rewards = rewardPoolInfo * 0 / 100
 
 
 # 📚Trading rewards
@@ -45,8 +57,8 @@ def get_trading_rewards():
 # 当前块-上次更新的块=差值块
 # 当前差值奖励=(每个块产出奖励 x 差值块 x 池子的权重) / 总权重
 # calc_token_amount计算用户输入后未来交易量
-# 未来的poolinfo交易量=当前池子交易量+用户输入交易量
-# 未来的userinfo交易量=当前用户个人交易量+用户输入交易量
+# 未来的poolinfo交易量=当前池子交易量+calc_token_amount
+# 未来的userinfo交易量=当前用户个人交易量+calc_token_amount
 # 未来池子未领取的奖励=池子未领取的奖励+当前差值奖励
 # 未来的奖励=未来池子未领取的奖励 X 未来的userinfo交易量 / 未来的poolinfo交易量
 # 当前的奖励=池子未领取的奖励 X 用户当前的个人奖励 / 池子交易量

@@ -81,7 +81,7 @@
         },
         {
           "indexed": false,
-          "name": "tokens_bought",
+          "name": "ƒ",
           "type": "uint256"
         }
       ],
