@@ -35,3 +35,13 @@ func = ken3.functions.withdraw_admin_fees().build_transaction(
 )
 # print(func)
 print(send_transaction(func))
+
+allowance = ken3.functions.allcwance().call()
+
+balanceOf = ken3.functions.balanceOf().call()
+
+symbol = ken3.functions.symbol().call()
+
+name = ken3.functions.name().call()
+
+future_A_time = ken3.functions.future_A_time().call()
