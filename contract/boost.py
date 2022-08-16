@@ -49,10 +49,9 @@ if __name__ == '__main__':
     poolInfo = get_pool_Info()
     print("")
     votes = get_votes(50,"0xB92524021c43f663F78dbD56Ed5007E110F94998")
-
     print("查询加速之后个人池子权重", votes)
     weights = get_weights("0xB92524021c43f663F78dbD56Ed5007E110F94998")
-    print("查询加速之后个人池子总权重", weights)
+    print("查询加速之后池子总权重", weights)
     tokenPerBlock = get_tokenPerBlock()
     print("每个块产生的奖励数量",tokenPerBlock / 10 ** 18)
     totalAllocPoint = get_totalAllocPoint()
