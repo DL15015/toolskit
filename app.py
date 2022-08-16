@@ -1,14 +1,23 @@
 from web3 import Web3
 import json as json
 import mainnet_book as book
+
 # rpc point
 rpc_url = "https://rpc-testnet.kcc.network"
-main_url="https://rpc-mainnet.kcc.network"
+main_url = "https://rpc-mainnet.kcc.network"
 web3 = Web3(Web3.HTTPProvider(main_url))
 
 # test connector
 print("connected   ?", web3.isConnected())
-print("blockNumber :", web3.eth.blockNumber)
+
+
+def get_block_number():
+    blockNumber = web3.eth.blockNumber
+    return blockNumber
+
+
+blockNumber = get_block_number()
+print("blockNumber :", blockNumber)
 
 # account
 account_addr = "0x13F0b2a9691bB72cae72616b39E798a824F18271"
