@@ -1,6 +1,9 @@
 from app import *
 
-ken3, swap_router, boost = init()
+# ken3, swap_router, boost = init()
+ret = init()
+ken3 = ret[0]
+print("ken3的地址", ken3.address)
 
 # totalSupply
 totalSupply = ken3.functions.totalSupply().call()
@@ -15,8 +18,8 @@ admin_fee = ken3.functions.admin_fee().call()
 print(admin_fee)
 
 # calc_token_amount
-calc_token_amount = ken3.functions.calc_token_amount([0, 1000000000000000000, 0], False).call()
-print(calc_token_amount)
+# calc_token_amount = ken3.functions.calc_token_amount([0,10000000000000000000,0], True).call()
+# print(calc_token_amount)
 
 """
     =============== write ===============
