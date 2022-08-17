@@ -9,7 +9,7 @@ def get_pool_length():
     return pool_length
 pool_length = get_pool_length()
 
-def get_pool_Info():
+def get_for():
     # pool_info 池子信息
     print("池子lp地址", "池子权重", "上次池子更新的块 Farming APR")
     for i in range(pool_length):
@@ -22,6 +22,10 @@ def get_pool_Info():
         # = (KEN单块产量*28800 )*（该池子权重 / 所有池子权重 ）* KEN价格 / 池子TVL*365/3.33*100%
         farming_apr = (0.4 * 28800) * (poolInfo[1] / totalAllocPoint) * 0.57 / 27.97 * 365 / 3.33
         print("池子:{}".format(i + 1), poolInfo, '{:.10%}'.format(farming_apr))
+    return poolInfo
+
+def get_pool_Info(id):
+    poolInfo = boost.functions.poolInfo(id).call()
     return poolInfo
 
 def get_votes(tokenID,address):
@@ -46,9 +50,11 @@ def get_totalAllocPoint():
 if __name__ == '__main__':
     pool_length = get_pool_length()
     print("池子数量",pool_length)
-    poolInfo = get_pool_Info()
+    getfor = get_for()
     print("")
-    votes = get_votes(50,"0xB92524021c43f663F78dbD56Ed5007E110F94998")
+    poolInfo = get_pool_Info(0)
+    print("poolinfo",poolInfo)
+    votes = get_votes(25,"0xB92524021c43f663F78dbD56Ed5007E110F94998")
     print("查询加速之后个人池子权重", votes)
     weights = get_weights("0xB92524021c43f663F78dbD56Ed5007E110F94998")
     print("查询加速之后池子总权重", weights)
