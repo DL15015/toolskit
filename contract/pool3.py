@@ -8,16 +8,16 @@ ken3 = ret[0]
 # print("pool3lp的地址", pool3lp.address)
 
 # totalSupply
-totalSupply = ken3.functions.totalSupply().call()
-log("totalSupply", web3.fromWei(totalSupply, 'ether'))
+# totalSupply = ken3.functions.totalSupply().call()
+# log("totalSupply", web3.fromWei(totalSupply, 'ether'))
 
 # A
 A = ken3.functions.A().call()
-print("A", A)
+# print("A", A)
 
 # admin_fee
 admin_fee = ken3.functions.admin_fee().call()
-print("admin_fee", admin_fee)
+# print("admin_fee", admin_fee)
 
 
 # calc_token_amount 计算用户输入后未来交易量ken
@@ -29,7 +29,7 @@ def get_calc_token_amount(token1, token2, token3):
 
 
 calc_token_amount = get_calc_token_amount(3, 0, 0)
-print("计算用户输入后未来交易量ken", calc_token_amount)
+# print("计算用户输入后未来交易量ken", calc_token_amount)
 
 
 #  get_dy 计算用户输入后未来的token量
@@ -39,7 +39,7 @@ def get_dy(token1, token2, amount):
 
 
 get_dy = get_dy(1, 2, 100)
-print("计算用户输入后未来的token量", get_dy)
+# print("计算用户输入后未来的token量", get_dy)
 
 """
     =============== write ===============
