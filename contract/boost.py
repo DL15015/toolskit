@@ -1,6 +1,6 @@
 from app import *
 
-ken3, swap_router, swap_mining, boost, gauge = init()
+ken3, swap_router, swap_mining, boost, gauge,pool4 = init()
 print(boost.address)
 
 def get_pool_length():

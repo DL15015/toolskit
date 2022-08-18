@@ -71,5 +71,5 @@ if __name__ == '__main__':
     print("SpeedReward",speed_reward.__str__())
     min_speed_reward = get_min()
     print("取最小加速奖励",min_speed_reward)
-    speed = get_speed()
+    speed = get_Speed()
     print("Current boots总结果",speed)
