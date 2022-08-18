@@ -1,6 +1,6 @@
 from app import *
 
-ken3, swap_router, swap_mining, boost, gauge = init()
+ken3, swap_router, swap_mining, boost, gauge,pool4 = init()
 print(swap_mining.address)
 
 # poolLength 池子数量
@@ -8,7 +8,7 @@ poolLength = swap_mining.functions.poolLength().call()
 print("池子数量:", poolLength)
 
 
-def get_poolinfo():
+def get_poolinfos():
     arr = []
     for i in range(poolLength):
         # pool_info 池子信息 参数0：uint256 输入池子id
@@ -68,20 +68,22 @@ def get_usedWeights(token_id):
 
 
 if __name__ == '__main__':
-    poolinfo = get_poolinfo()
+    poolinfo = get_poolinfos()
+    print("池子lp/Zap地址", "查询该池子的总交易量", "池子权重", "该池子累计的奖励", "上次池子更新的块")
     print("所有池子信息", poolinfo)
     totalAllocPoint = get_totalAllocPoint()
     print("所有池子权重", totalAllocPoint)
-    userInfo = get_userInfo(5, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923")
+    userInfo = get_userInfo(1, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923")
     print("用户交易量：", userInfo[0])
     print("上次用户更新的块：", userInfo[1])
+    print("userInfo",userInfo)
     votes = get_votes(38, "0x471831942aE446CfB1B6A4156e6660968c2f9924")
     print("用户交易池子加速在池子的权重", votes)
-    weights = get_weights("0x106CdFe20F0cc24C936F27D5fCe73b9aCD9C1C37")
-    print("当前池子投票后权重", weights)
-    totalWeight = get_totalWeight()
-    print('所有池子投票后权重', totalWeight)
-    rewardPoolInfo = get_rewardPoolInfo(0, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923")
-    print("交易后，该账户在该池子即将获得奖励", rewardPoolInfo / 10 ** 18)
-    usedweights = get_usedWeights(38)
-    print("查询用户在所有池子加速的总权重", usedweights)
+    # weights = get_weights("0x106CdFe20F0cc24C936F27D5fCe73b9aCD9C1C37")
+    # print("当前池子投票后权重", weights)
+    # totalWeight = get_totalWeight()
+    # print('所有池子投票后权重', totalWeight)
+    # rewardPoolInfo = get_rewardPoolInfo(0, "0xdf4e614dc3e91b4D8aaB7CA1622A8771d29C7923")
+    # print("交易后，该账户在该池子即将获得奖励", rewardPoolInfo / 10 ** 18)
+    # usedweights = get_usedWeights(38)
+    # print("查询用户在所有池子加速的总权重", usedweights)

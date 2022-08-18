@@ -15,6 +15,7 @@ totalAllocPoint = boost.get_totalAllocPoint()
 votes =boost.get_votes(25,"0xB92524021c43f663F78dbD56Ed5007E110F94998")
 weights = boost.get_weights("0xB92524021c43f663F78dbD56Ed5007E110F94998")
 
+
 # Current boots计算
 def get_piece_of_output():
     # 块产出
@@ -27,9 +28,11 @@ def get_normal_reward():
     return normal_reward
 
 def get_base_reward():
+
     # BaseReward
     base_reward = normal_reward * (3 / 10)
     return base_reward
+
 
 def get_speed_reward():
     # SpeedReward
@@ -38,6 +41,7 @@ def get_speed_reward():
     # 未加速时使用SpeedReard这行公式
     # speed_reward = (votes / weights) * totalSupply * 0.7
     # return speed_reward
+
 
 def get_min():
     # 取最小加速奖励
@@ -48,11 +52,13 @@ def get_min():
     # print("SpeedReward", speed_reward.__str__())
     return min_speed_reward
 
-def get_speed():
+
+def get_Speed():
     # Current boots总结果
     speed = (base_reward + min_speed_reward) / base_reward
     print(speed)
     return speed
+
 
 if __name__ == '__main__':
     piece_of_output = get_piece_of_output()

@@ -6,8 +6,7 @@ import testnet_book as book
 rpc_url = "https://rpc-testnet.kcc.network"
 # main_url = "https://rpc-mainnet.kcc.network"
 # web3 = Web3(Web3.HTTPProvider(main_url))
-test_url = "https://rpc-testnet.kcc.network"
-web3 = Web3(Web3.HTTPProvider(test_url))
+web3 = Web3(Web3.HTTPProvider(rpc_url))
 
 # test connector
 print("connected   ?", web3.isConnected())
@@ -35,7 +34,10 @@ print("")
 def init():
     with open("../abi/3pool_abi.json") as f:
         _abi = json.load(f)
-        ken3 = web3.eth.contract(address=book.ken3, abi=_abi["abi"])
+        ken3 = web3.eth.contract(address=book.pool3lp, abi=_abi["abi"])
+    with open("../abi/CryptoDeposit4Zap_abi.json") as f:
+        _abi = json.load(f)
+        pool4 = web3.eth.contract(address=book.cryptoDeposit4Zap_address, abi=_abi["abi"])
     with open("../abi/swap_router_abi.json") as f:
         _abi = json.load(f)
         swap_router = web3.eth.contract(address=book.swap_router, abi=_abi["abi"])
@@ -49,7 +51,7 @@ def init():
         _abi = json.load(f)
         gauges_addr = boost.functions.gauges(book.pool3).call()
         gauge = web3.eth.contract(address=gauges_addr, abi=_abi["abi"])
-    return ken3, swap_router, swap_mining, boost, gauge
+    return ken3, swap_router, swap_mining, boost, gauge, pool4
 
 
 def log(tag, value):
