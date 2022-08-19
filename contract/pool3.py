@@ -4,7 +4,7 @@ from app import *
 from mainnet_book import pool3lp
 
 ret = init()
-ken3 = ret[0]
+ken3 = ret[1]
 # print("pool3lp的地址", pool3lp.address)
 
 # totalSupply
@@ -21,7 +21,7 @@ admin_fee = ken3.functions.admin_fee().call()
 
 
 # calc_token_amount 计算用户输入后未来交易量ken
-# False交易的交易量
+# False交易的交易量,True是流动性，计算预计可得到的lp
 def get_calc_token_amount(token1, token2, token3):
     calc_token_amount = ken3.functions.calc_token_amount(
         [token1 * 10 ** 18, token2, token3], False).call()

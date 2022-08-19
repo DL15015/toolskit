@@ -47,7 +47,7 @@ def get_block_number():
     return blockNumber
 
 
-# calc_token_amount 计算用户输入后未来交易量ken # False交易的交易量
+# calc_token_amount 计算用户输入后未来交易量ken # False交易的交易量,True是流动性，计算预计可得到的lp
 # 需要输入的池子输入交易数量，其他输入0
 def get_calc_token_amount(token1, token2, token3, token4):
     calc_token_amount = pool4.functions.calc_token_amount(

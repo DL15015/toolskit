@@ -32,12 +32,18 @@ print("")
 
 
 def init():
+    with open("../abi/KCS-sKCS_abi.json") as f:
+        _abi = json.load(f)
+        pool2 = web3.eth.contract(address=book.skcs2pool_address, abi=_abi["abi"])
     with open("../abi/3pool_abi.json") as f:
         _abi = json.load(f)
         ken3 = web3.eth.contract(address=book.pool3, abi=_abi["abi"])
-    with open("../abi/CryptoDeposit4Zap_abi.json") as f:
+    with open("../abi/deposit3ken_busd_zap_abi.json") as f:
         _abi = json.load(f)
-        pool4 = web3.eth.contract(address=book.cryptoDeposit4Zap_address, abi=_abi["abi"])
+        pool4 = web3.eth.contract(address=book.ken3_busd_DepositZap, abi=_abi["abi"])
+    with open("../abi/CryptoDeposit5Zap_abi.json") as f:
+        _abi = json.load(f)
+        pool5 = web3.eth.contract(address=book.cryptoDepositZap5_address, abi=_abi["abi"])
     with open("../abi/swap_router_abi.json") as f:
         _abi = json.load(f)
         swap_router = web3.eth.contract(address=book.swap_router, abi=_abi["abi"])
@@ -49,9 +55,9 @@ def init():
         boost = web3.eth.contract(address=book.boost, abi=_abi["abi"])
     with open("../abi/gauge_abi.json") as f:
         _abi = json.load(f)
-        gauges_addr = boost.functions.gauges(book.pool3).call()
+        gauges_addr = boost.functions.gauges(book.pool5_curveLPToken_address).call()
         gauge = web3.eth.contract(address=gauges_addr, abi=_abi["abi"])
-    return ken3, swap_router, swap_mining, boost, gauge, pool4
+    return pool2, ken3, pool4, pool5, swap_router, swap_mining, boost, gauge
 
 
 def log(tag, value):
